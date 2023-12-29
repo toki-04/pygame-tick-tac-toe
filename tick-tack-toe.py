@@ -109,8 +109,19 @@ class Board:
             self.winner = "X"
         if self.board[0][2] == "O" and self.board[1][1] == "O" and self.board[2][0] == "O":
             self.winner = "O"
-
+        
         # check draw:
+        draw_count = 0
+        for col in self.board:
+            draw_count += col.count("X")
+            draw_count += col.count("O")
+
+
+        if draw_count == 9:
+            self.winner="DRAW"
+
+
+
 
 
 
